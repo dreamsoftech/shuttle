@@ -218,7 +218,8 @@ module Shuttle
       count = ssh.capture("echo $count")
 
       unless count.empty?
-        num = Integer(count) - Integer(keep_releases)
+        puts count
+        num = 0 #Integer(count) - Integer(keep_releases)
 
         if num > 0
           log "Cleaning up old releases: #{num}" if num > 1
